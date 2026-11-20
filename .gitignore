@@ -1,0 +1,29 @@
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+.DS_Store
+*.log
+
+# C#/.NET build output (backend)
+bin/
+obj/
+*.user
+
+# AWS CDK generated output
+cdk.out/
+
+# Approved/external knowledge base - never commit
+kb.json
+
+# Local environment files / secrets
+.env
+.env.*
+vitest-results.json
+
+# Kiro execution/session metadata (IDs, timestamps) - not needed to preserve specs
+tasks.meta.json
+
+# .NET test output
+TestResults/
+*.trx

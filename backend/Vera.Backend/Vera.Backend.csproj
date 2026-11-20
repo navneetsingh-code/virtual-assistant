@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="3.0.1" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="3.4.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="3.0.1" />
+    <PackageReference Include="AWSSDK.BedrockRuntime" Version="4.0.101.13" />
+  </ItemGroup>
+
+  <!--
+    The approved, schema-validated kb.json is copied to this project directory by
+    the Deployment_Process before publish (it is NOT committed — it is external,
+    approved content). When present, it is packaged into the Lambda bundle at
+    /var/task/kb.json (the default VERA_KB_PATH). The build does not fail when it
+    is absent so local builds/tests (which inject a fixture provider) still work.
+  -->
+  <ItemGroup>
+    <Content Include="kb.json" Condition="Exists('kb.json')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

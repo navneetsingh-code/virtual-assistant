@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Vera.Backend.Tests/Vera.Backend.Tests.csproj" />
+  <Project Path="Vera.Backend/Vera.Backend.csproj" />
+</Solution>
